@@ -1,64 +1,120 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Biomate v2 - Plateforme Laravel
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Biomate v2 est une plateforme développée avec **Laravel 9**, **Livewire**, **Tailwind CSS** et **Vite**, conçue pour fournir une base solide pour des applications modernes et dynamiques. Elle s’appuie sur une architecture modulaire, des composants réactifs, une sécurité renforcée avec Laravel Sanctum, et une organisation claire du code.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🚀 Stack Technique
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **Framework** : Laravel 9
+- **Composants dynamiques** : Livewire
+- **CSS** : Tailwind CSS
+- **Bundler** : Vite
+- **Authentification API** : Laravel Sanctum
+- **Tests** : PHPUnit
+- **Outils dev** : Laravel Breeze, Laravel Sail, Laravel Pint
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## 📁 Structure du projet
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+```
+biomate v2/
+├── app/                    # Contrôleurs, modèles, logique applicative
+├── bootstrap/             # Initialisation du framework
+├── config/                # Fichiers de configuration
+├── database/              # Migrations, seeders, factories
+├── public/                # Entrée publique (index.php)
+├── resources/             # Vues Blade, composants Livewire, CSS/JS
+├── routes/                # Fichiers de routes (web.php, api.php)
+├── storage/               # Cache, logs, fichiers générés
+├── tests/                 # Tests automatisés (PHPUnit)
+├── .env / .env.example    # Variables d’environnement
+├── composer.json          # Dépendances PHP
+├── package.json           # Dépendances JS
+├── tailwind.config.js     # Configuration Tailwind
+├── vite.config.js         # Configuration Vite
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## ⚙️ Installation
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### 1. Prérequis
+- PHP >= 8.0.2
+- Composer
+- Node.js + npm
+- MySQL ou SQLite
 
-### Premium Partners
+### 2. Étapes de configuration
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+```bash
+# Cloner le repo
+cd biomate\ v2
 
-## Contributing
+# Installer les dépendances PHP
+composer install
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+# Installer les dépendances JS
+npm install
 
-## Code of Conduct
+# Copier l’environnement
+cp .env.example .env
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# Générer la clé d'application
+php artisan key:generate
 
-## Security Vulnerabilities
+# (Optionnel) Créer la base et lancer les migrations
+php artisan migrate
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# Compiler les assets
+npm run dev
 
-## License
+# Lancer le serveur local
+php artisan serve
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+> L'application sera disponible sur : http://127.0.0.1:8000
+
+---
+
+## 🔐 Authentification
+
+Ce projet utilise **Laravel Sanctum** pour sécuriser les routes API et gérer les sessions utilisateurs. Il peut être facilement étendu pour intégrer des permissions, rôles, ou une API token-based.
+
+---
+
+## 🧪 Tests
+
+```bash
+php artisan test
+```
+
+Les tests sont situés dans le répertoire `/tests` et utilisent PHPUnit.
+
+---
+
+## 🛠 Fonctionnalités prévues ou existantes
+
+- Système de login/register avec Laravel Breeze
+- Interface utilisateur responsive avec Tailwind
+- Composants Livewire réactifs
+- Architecture claire MVC
+
+---
+
+## 📌 Notes
+
+- Assurez-vous que le fichier `.env` est bien configuré pour votre base de données.
+- En cas d’erreur liée à Vite, lancer : `npm run build` ou `npm run dev`
+
+---
+
+## 📄 Licence
+
+Projet sous licence MIT — libre d'utilisation et de modification.
+
+---
+
+Développé par Sne3P
+
